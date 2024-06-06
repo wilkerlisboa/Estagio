@@ -1,0 +1,44 @@
+.custom-img-size {
+    width: 150px; /* Defina o tamanho desejado */
+    height: auto; /* Mantém a proporção da imagem */
+}
+body {
+    background-color: #E5E5E5;
+}
+.btn-custom {
+    background-color: #008A3A;
+    border: none;
+    color: white;
+    padding: 15px 58px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 23px 4px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordas arredondadas, opcional */
+    box-shadow: 9px 8px 11px 2px rgba(0, 0, 0, 0.2);
+
+}
+.btn-custom:hover {
+    background-color: #007934; /* Cor quando o botão é hover */
+}
+.linha{
+    border: 0;
+    height: 4px; /* Aumenta a espessura da linha */
+    background: #008A3A; /* Cor da linha */
+    margin: 20px 0;
+}
+.texto{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}

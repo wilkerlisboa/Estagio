@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
         emailjs.send('service_w1pnqoo', 'template_tulesef', formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
-                window.location.href = 'http://127.0.0.1:5500/page/sucesso.html';
+                window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/sucesso.html';
             }, function(error) {
                 console.error('Erro ao enviar e-mail:', error);
-                window.location.href = 'pagina_de_confirmacao.html';
+                window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/erro.html';
             });
     });
 });

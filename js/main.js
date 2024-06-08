@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mostra o preloader por alguns segundos e depois exibe o conteúdo da página
+// REALOAD
 window.addEventListener('load', function() {
     setTimeout(function() {
         document.querySelector('.preloader').style.display = 'none';
         document.body.style.display = 'block';
-    }, 4000); // Exibe o preloader por 3 segundos (3000 milissegundos)
+    }, 4000); 
 });

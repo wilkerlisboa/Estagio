@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./img/texto.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/tuxtu_logo_oficial.png" type="image/x-icon">
     <title>Seleção de Estagio</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-center mt-3">
-                <img src="./img/texto.png" alt="Imagem Centralizada" class="custom-img-size">
+                <img src="./img/tuxtu_logo_oficial.png" alt="Imagem Centralizada" class="custom-img-size">
             </div>
             <h1 class="text-center mt-4">Trilha de Seleção de Estagiário(a)</h1>
             <p class="text-center mt-4 fs-4">
@@ -27,176 +29,187 @@
         <div class="row justify-content-center mt-4">
             <div class="col-12 col-md-6">
                 <h2 class="text-center texto">Curriculo</h2>
-                <form action="https://formsubmit.co/marcelocreao@gmail.com" method="POST">
+                <form id="contact-form">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome Completo</label>
-                        <input type="name" name="name" class="form-control" id="name" placeholder="Nome Completo do Candidato" >
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" name="name" class="form-control" id="nome" placeholder="Nome Completo do Candidato">
                     </div>
                     <div class="mb-3">
-                        <label for="text" class="form-label">Endereço</label>
-                        <input type="text" name="endereço" class="form-control" id="text" placeholder="Digite seu Endereço" >
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Digite seu Endereço">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu email" >
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu Email">
                     </div>
                     <div class="mb-3">
-                        <label for="text" class="form-label">Idade</label>
-                        <input type="number"name="Idade" class="form-control" id="text" placeholder="Digite sua idade" >
+                        <label for="idade" class="form-label">Idade</label>
+                        <input type="text" name="idade" class="form-control" id="idade" placeholder="Digite sua Idade, exemplo (24 anos)">
                     </div>
                     <div class="mb-3">
-                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" name="Data Nascimento" class="form-control" id="dataNascimento" placeholder="Digite sua data de nascimento">
+                        <label for="contato" class="form-label">Numero de celular</label>
+                        <input type="text" name="contato" class="form-control" id="contato" placeholder="Digite seu celular">
                     </div>
                     <div class="mb-3">
-                        <label for="EnsinoMedio" class="form-label">Ensino Médio</label>
-                        <input type="text" name="Ensino Médio" class="form-control" id="EnsinoMedio" placeholder="Nome da escola">
+                        <label for="data_nascimento" class="form-label">Data nascimento</label>
+                        <input type="text" name="data_nascimento" class="form-control" id="data_nascimento" placeholder="Digite sua data nascimento">
                     </div>
                     <div class="mb-3">
-                        <label for="cursoTecnico" class="form-label">Curso Técnico</label>
-                        <input type="text" name="Curso Técnico" class="form-control" id="CursoTécnico" placeholder="Digite seu período">
+                        <label for="ensino_medio" class="form-label">Ensino médio</label>
+                        <input type="text" name="ensino_medio" class="form-control" id="ensino_medio" placeholder="Digite onde concluiu o ensino médio">
                     </div>
                     <div class="mb-3">
-                        <label for="graduaçao" class="form-label">Curso de Graduação</label>
-                        <input type="text" name="Curso de Graduação" class="form-control" id="graduação" placeholder="Digite seu Ensino Superior" >
+                        <label for="curso_tecnico" class="form-label">Curso técnico</label>
+                        <input type="text" name="curso_tecnico" class="form-control" id="curso_tecnico" placeholder="Digite onde concluiu o curso técnico">
                     </div>
                     <div class="mb-3">
-                        <label for="OutraFormaçãoSuperior" class="form-label">Outra Formação Superior</label>
-                        <input type="text" name="Outra formação superior" class="form-control" id="OutraFormaçãoSuperior" placeholder="Digite caso tenha uma outra formação superior">
+                        <label for="curso_graduacao" class="form-label">Curso de graduação</label>
+                        <input type="text" name="curso_graduacao" class="form-control" id="curso_graduacao" placeholder="Digite qual curso de graduação está cursando">
                     </div>
                     <div class="mb-3">
-                        <label for="semestre" class="form-label">Semestre que está cursando</label>
-                        <input type="number" name="Semestre que está cursando" class="form-control" id="semestre" placeholder="O Semestre que esta cursando na graduação">
+                        <label for="semestre" class="form-label">Qual semestre está cursando</label>
+                        <input type="text" name="semestre" class="form-control" id="semestre" placeholder="Digite qual semestre está no curso de graduação">
                     </div>
                     <div class="mb-3">
-                        <label for="formação" class="form-label">Data de formação do curso</label>
-                        <input type="date" name="Data de formação do curso" class="form-control" id="periodo" placeholder="Data que ira forma no curso de graduação">
+                        <label for="formatura" class="form-label">Quando está previsto sua formatura</label>
+                        <input type="text" name="formatura" class="form-control" id="formatura" placeholder="Digite que mês/ano está previsto sua formatura">
                     </div>
                     <div class="mb-3">
-                        <label for="experiencia" class="form-label">Êxperiencia profissional<br>(Coloque 5 mais relevante)</label>
-                        <input type="text" name="Êxperiencia professional" class="form-control" id="periodo" placeholder="Êxperiencia profisional">
+                        <label for="outra_graduação" class="form-label">Cursando outra graduação</label>
+                        <input type="text" name="outra_formacao" class="form-control" id="outra_graduacao" placeholder="Digite caso esteja cursando outra graduação">
                     </div>
                     <div class="mb-3">
-                        <label for="aperfeiçoamento" class="form-label">Curso de aperfeiçoamento<br>(Coloque 5 mais relevante)</label>
-                        <input type="text" name="Curso de aperfeiçoamento" class="form-control" id="periodo" placeholder="Curso de aperfeiçoamento">
+                        <label for="outra_formacao" class="form-label">Possui outra formação</label>
+                        <input type="text" name="outra_formacao" class="form-control" id="outra_formacao" placeholder="Digite caso possui outra formação">
                     </div>
                     <div class="mb-3">
-                        <label for="software" class="form-label">Quais software que conhece ? (cite todos)</label>
-                        <input type="text" name="Quais software que conhece?" class="form-control" id="periodo" placeholder="Tecnologias que conhece">
+                        <label for="experiencia_profissional" class="form-label">Experiência Profissional<br>(coloque os cinco que você julga mais relevante)</label>
+                        <input type="text" name="experiencia_profissional" class="form-control" id="experiencia_profissional" placeholder="Digite local - periodo">
                     </div>
                     <div class="mb-3">
-                        <label for="idioma" class="form-label">Você possui outro idioma?</label>
-                        <input type="text" name="Possui outro idioma" class="form-control" id="periodo" placeholder="Caso possua outro idioma">
+                        <label for="curso_aperfeicoamento" class="form-label">Curso de aperfeiçoamento<br>(coloque os cinco que você julga mais relevante)</label>
+                        <input type="text" name="curso_aperfeicoamento" class="form-control" id="curso_aperfeicoamento" placeholder="Digite curso - periodo">
                     </div>
                     <div class="mb-3">
-                        <label for="estadoCivil" class="form-label">Estado civil?</label>
-                        <input type="text" name="Estado civil" class="form-control" id="periodo" placeholder="Digite seu estado civil">
+                        <label for="software" class="form-label">Quais outros software você conhece<br>(cite todos)</label>
+                        <input type="text" name="software" class="form-control" id="software" placeholder="Digite tecnologia que você conhece">
                     </div>
                     <div class="mb-3">
-                        <label for="filhos" class="form-label">Tem filhos (Se sim quantos?)</label>
-                        <input type="text" name="Tem filhos" class="form-control" id="periodo" placeholder="Caso tenha filhos" >
+                        <label for="idioma" class="form-label">Você possui conhecimento em outro idioma</label>
+                        <input type="text" name="idioma" class="form-control" id="idioma" placeholder="Digite caso possua outro idioma">
                     </div>
                     <div class="mb-3">
-                        <label for="regiao" class="form-label">Religião?</label>
-                        <input type="text" name="Religião" class="form-control" id="periodo" placeholder="Digite sua região" >
+                        <label for="estado_civil" class="form-label">Estado civil</label>
+                        <input type="text" name="estado_civil" class="form-control" id="estado_civil" placeholder="Digite seu estado civil">
+                    </div>
+                    <div class="mb-3">
+                        <label for="filhos" class="form-label">Tem filhos (quantos)</label>
+                        <input type="text" name="filhos" class="form-control" id="filhos" placeholder="Digite 'sim' caso tenha filhos e informe quantos">
+                    </div>
+                    <div class="mb-3">
+                        <label for="religiao" class="form-label">Religião</label>
+                        <input type="text" name="religiao" class="form-control" id="religiao" placeholder="Digite caso tenha uma religião">
                     </div>
                     <div class="mb-3">
                         <label for="fuma" class="form-label">Fuma?</label>
-                        <input type="text" name="Fuma" class="form-control" id="periodo" placeholder="Digite sim ou não" >
+                        <input type="text" name="fuma" class="form-control" id="fuma" placeholder="Digite sim ou não">
                     </div>
                     <div class="mb-3">
-                        <label for="bebe" class="form-label">Bebe?</label>
-                        <input type="text" name="Bebe" class="form-control" id="periodo" placeholder="Digite sim ou não" >
+                        <label for="bebida" class="form-label">Consome bebida alcoólica</label>
+                        <input type="text" name="bebida" class="form-control" id="bebida" placeholder="Digite sim ou não">
                     </div>
                     <div class="mb-3">
-                        <label for="fisica" class="form-label">Prática atividade fisica (quais?)</label>
-                        <input type="text" name="Prática atividade fisica" class="form-control" id="periodo" placeholder="Digite suas atividades fisica caso tenha">
+                        <label for="fisico" class="form-label">Pratica exercício físico (quais)</label>
+                        <input type="text" name="fisico" class="form-control" id="fisico" placeholder="Digite sim ou não">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(Facebook)</label>
-                        <input type="text" name="Facebook" class="form-control" id="periodo" placeholder="Apenas o link do Facebook caso tenha">
+                        <label for="facebook" class="form-label">Coloque aqui o link da sua rede social<br>(facebook)</label>
+                        <input type="text" name="facebook" class="form-control" id="facebook" placeholder="Digite o link do seu facebook">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(Instagram)</label>
-                        <input type="text" name="Instagram" class="form-control" id="periodo" placeholder="Apenas o link do Instagram caso tenha">
+                        <label for="instagram" class="form-label">Coloque aqui o link da sua rede social<br>(instagram)</label>
+                        <input type="text" name="instagram" class="form-control" id="instagram" placeholder="Digite o link do seu instagram">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(LinkdIn)</label>
-                        <input type="text" name="LinkdIn" class="form-control" id="periodo" placeholder="Apenas o link do LinkdIn caso tenha">
+                        <label for="linkdin" class="form-label">Coloque aqui o link da sua rede social<br>(linkdIn)</label>
+                        <input type="text" name="linkdin" class="form-control" id="linkdin" placeholder="Digite o link do seu linkdIn">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(TikTok)</label>
-                        <input type="text" name="" class="form-control" id="periodo" placeholder="Apenas o link do TikTok caso tenha">
+                        <label for="tiktok" class="form-label">Coloque aqui o link da sua rede social<br>(TikTok)</label>
+                        <input type="text" name="tiktok" class="form-control" id="tiktok" placeholder="Digite o link do seu TikTok">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(Kwai)</label>
-                        <input type="text" name="Kwai" class="form-control" id="periodo" placeholder="Apenas o link do Kwai caso tenha">
+                        <label for="kwai" class="form-label">Coloque aqui o link da sua rede social<br>(Kwai)</label>
+                        <input type="text" name="kwai" class="form-control" id="kwai" placeholder="Digite o link do seu Kwai">
                     </div>
                     <div class="mb-3">
-                        <label for="periodo" class="form-label">Coloque o Link da Rede Social que você usa<br>(YouTube)</label>
-                        <input type="text" name="YouTube" class="form-control" id="periodo" placeholder="Apenas o link do Youtube caso tenha">
+                        <label for="youtube" class="form-label">Coloque aqui o link da sua rede social<br>(Youtube)</label>
+                        <input type="text" name="youtube" class="form-control" id="youtube" placeholder="Digite o link do seu Youtube">
                     </div>
                     <div class="mb-3">
-                        <label for="hobby" class="form-label">Possui algum Hobby (Quais são?)</label>
-                        <input type="text" name="Possui algum Hobby" class="form-control" id="periodo" placeholder="Digite seus hobbys">
+                        <label for="hobby" class="form-label">Você tem algum hobby (quais)</label>
+                        <input type="text" name="hobby" class="form-control" id="hobby" placeholder="Digite seus hobby">
                     </div>
                     <div class="mb-3">
-                        <label for="escolha" class="form-label">Qual curso você faz<br>(Porque Escolheu esse curso ?)</label>
-                        <input type="text" name="Qual curso você faz(Porque Escolheu esse curso)" class="form-control" id="periodo" placeholder="Fale um pouco sobre a escolha do curso">
+                        <label for="profissionalizante" class="form-label">Você tem algum curso (profissionalizante)</label>
+                        <input type="text" name="profissionalizante" class="form-control" id="profissionalizante" placeholder="Digite seu curso profissionalizante">
                     </div>
                     <div class="mb-3">
-                        <label for="Humano" class="form-label">Fale-nos sobre você como ser humano</label>
-                        <input type="text" name="Fale-nos sobre você como ser humano" class="form-control" id="periodo" placeholder="fale um pouco sobre você">
+                        <label for="escolha" class="form-label">Por que você escolheu esse curso profissionalizante</label>
+                        <input type="text" name="escolha" class="form-control" id="escolha" placeholder="Digite o motivo da escolha do curso profissionalizante">
                     </div>
                     <div class="mb-3">
-                        <label for="social" class="form-label">Fale-nos um pouco da sua vida social<br>(tem muitos amigos?)</label>
-                        <input type="text" name="Fale-nos um pouco da sua vida social(tem muitos amigos?)" class="form-control" id="periodo" placeholder="fale um pouco sobre sua vida social">
+                        <label for="familia" class="form-label">Fale sobre sua família</label>
+                        <input type="text" name="familia" class="form-control" id="familia" placeholder="Digite mais sobre sua familia">
                     </div>
                     <div class="mb-3">
-                        <label for="horasVagas" class="form-label">O que gosta de fazer nas hora vagas?</label>
-                        <input type="text" name="O que gosta de fazer nas hora vagas" class="form-control" id="periodo" placeholder="Gosta de fazer nas horas vagas">
+                        <label for="humano" class="form-label">Fale sobre você como ser humano</label>
+                        <input type="text" name="humano" class="form-control" id="humano" placeholder="Digite sobre você como ser humano">
                     </div>
                     <div class="mb-3">
-                        <label for="forte" class="form-label">Destaque seus pontos fortes<br>(Quais você acha que deve melhorar)</label>
-                        <input type="text" name="Destaque seus pontos fortes(Quais você acha que deve melhorar)" class="form-control" id="periodo" placeholder="Quais seus pontos fortes">
+                        <label for="social" class="form-label">Fale sobre um pouco da sua vida social<br>(tem muitos amigos)</label>
+                        <input type="text" name="social" class="form-control" id="social" placeholder="Digite sobre sua vida social">
                     </div>
                     <div class="mb-3">
-                        <label for="Humano" class="form-label">Destaque seus pontos fracos<br>(Quais você acha que deve melhorar)</label>
-                        <input type="text" name="Destaque seus pontos fracos(Quais você acha que deve melhorar)" class="form-control" id="periodo" placeholder="Quais seus pontos fracos">
+                        <label for="horas" class="form-label">O que gosta de fazer nas horas vagas</label>
+                        <input type="text" name="horas" class="form-control" id="horas" placeholder="Digite o que gosta de fazer nas horas vagas">
                     </div>
                     <div class="mb-3">
-                        <label for="porque" class="form-label">Por que estagiar na TUXTU?</label>
-                        <input type="text" name="Por que estagiar na TUXTU?" class="form-control" id="periodo" placeholder="Motivo para estagiar na tuxtu" >
+                        <label for="pontos_forte" class="form-label">Destaque seus pontos fortes<br>(quais você acha que deve melhorar)</label>
+                        <input type="text" name="pontos_forte" class="form-control" id="pontos_forte" placeholder="Digite seus pontos fortes">
                     </div>
                     <div class="mb-3">
-                        <label for="office" class="form-label">Qual e o seu dominio com programas de computador(Pacote office)<br>e outro? Está fazendo algum outro curso na área de tecnologia</label>
-                        <input type="text" name="Qual e o seu dominio com programas de computador(Pacote office) e outro? Está fazendo algum outro curso na área de tecnologia" class="form-control" id="periodo" placeholder="Motivo para estagiar na tuxtu">
+                        <label for="pontos_fraco" class="form-label">Destaque seus pontos fracos<br>(quais você acha que deve melhorar)</label>
+                        <input type="text" name="pontos_fraco" class="form-control" id="pontos_fraco" placeholder="Digite seus pontos fracos">
                     </div>
                     <div class="mb-3">
-                        <label for="outros" class="form-label">Quais outras habilidades ou conhecimentos você possui?<br>(Cite todos)</label>
-                        <input type="text" name="Quais outras habilidades ou conhecimentos você possui(Cite todos)" class="form-control" id="periodo" placeholder="Outros conhecimentos importante">
+                        <label for="tuxtu" class="form-label">Por que você quer estagiar na TUXTU</label>
+                        <input type="text" name="tuxtu" class="form-control" id="tuxtu" placeholder="Digite por que você quer estagiar na TUXTU">
                     </div>
                     <div class="mb-3">
-                        <label for="pressao" class="form-label">Como você lida com a presão e com o estresse no trabalho?</label>
-                        <input type="text" name="Como você lida com a presão e com o estresse no trabalho" class="form-control" id="periodo" placeholder="Como lida sobre pressão?">
-                    </div>
-                    <div class="mb-3">
-                        <label for="perspctivas" class="form-label">Quais perspctivas de vida você têm para o futuro?</label>
-                        <input type="text" name="Quais perspctivas de vida você têm para o futuro" class="form-control" id="periodo" placeholder="Perspctiva de vida para o futuro">
-                    </div>
-                    <div class="mb-3 justify-content-center">
-                        <label for="Video" class="form-label">VÍDEO / Grave um vídeo de até 05 (cinco) minutos. O vídeo é livre, seja criativo.<br>Como sugestão, se apresente, apresente seu curso, e principalmente como o seu conhecimento e as habilidades que você possui em outras áreas podem inovar na TUXTU.<br>Apresente ações sociais, jornadas, e outras habilidades que você possui<br>( Poste seu vídeo no YouTube modo privado e
-                            insira o link do vídeo ao lado.)</label>
-                        <input type="text" name="Video " class="form-control" id="periodo" placeholder="Link do seu video no youtbe" >
+                        <label for="office" class="form-label">Qual seu domínio com programas de computador (pacote Office)</label>
+                        <input type="text" name="office" class="form-control" id="office" placeholder="Digite o seu dominio com o pacote office">
                     </div> 
+                    <div class="mb-3">
+                        <label for="habilidade" class="form-label">Quais outras habilidades ou conhecimentos você possui<br>(cite todos)</label>
+                        <input type="text" name="habilidade" class="form-control" id="habilidade" placeholder="Digite o seu dominio com o pacote office">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pressao" class="form-label">Como você lida com a pressão e com o estresse no trabalho</label>
+                        <input type="text" name="pressao" class="form-control" id="pressao" placeholder="Digite como você lida com pressão">
+                    </div>
+                    <div class="mb-3">
+                        <label for="perspectiva" class="form-label">Quais perspectivas de vida você têm para o futuro</label>
+                        <input type="text" name="perspectiva" class="form-control" id="perspectiva" placeholder="Digite como você lida com pressão">
+                    </div>
+                    <div class="mb-3">
+                        <label for="video" class="form-label">Grave um vídeo de até 05 (cinco) minutos.<br>O vídeo é livre, seja criativo. Como sugestão, se apresente, apresente seu curso, e principalmente como o seu conhecimento e as habilidades que você possui em outras áreas podem inovar na TUXTU.<br>Apresente ações sociais, jornadas, e outras habilidades que você possui.</label>
+                        <input type="text" name="video" class="form-control" id="video" placeholder="Digite a url do seu video no youtube no modo privado.">
+                    </div>
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-custom">Enviar Curriculo</button>
                     </div>
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="🍃🧑‍🎓👩‍🎓👉Novo Candidato a estágio!!">
-                    <input type="hidden" name="_template" value="basic">
-                    <input type="hidden" name="_next" value="https://wilkerlisboa.github.io/Estagio/page/sucesso.html">
                 </form>
             </div>
         </div>
@@ -205,7 +218,6 @@
         <hr class="custom-hr linha">
         <p>© Copyright TUXTU 2022 Todos os direitos reservados. </p>
     </footer>
-
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

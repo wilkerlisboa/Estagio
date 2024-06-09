@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Substitua 'YOUR_PUBLIC_KEY' pelo seu Public Key do EmailJS
+    // CHAVE PUBLICA DO EMAILJS
     emailjs.init('1bZVq8TPEQuEYlSfU');
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Coletando dados do formulário
+        // COLETANDO DADOS DO FORMULARIO
         var formData = {
             name: document.getElementById('nome').value,
             endereco: document.getElementById('endereco').value,
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
             video: document.getElementById('video').value
         };
 
-        // Substitua 'YOUR_SERVICE_ID' e 'YOUR_TEMPLATE_ID' pelos seus IDs do EmailJS
-        emailjs.send('service_w1pnqoo', 'template_tulesef', formData)
+        // 'ID DE SERVIÇO' E 'EMPLATE ID' DO EMAILJS
+        emailjs.send('service_3xuqj69', 'template_tulesef', formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
                 window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/sucesso.html';

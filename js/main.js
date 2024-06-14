@@ -1,6 +1,6 @@
 // require('dotenv').config();
 // const api_key  =  process.env.API_KEY_PRIVATE
-const config = require('./config.json');
+const config = require('../config.json');
 const api_key = config.API_KEY_PUBLIC;
 const service = config.SERVICE;
 const template = config.TEMPLATE;

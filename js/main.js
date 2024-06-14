@@ -1,5 +1,7 @@
-require('dotenv').config();
-const api_key  =  process.env.API_KEY_PRIVATE
+// require('dotenv').config();
+// const api_key  =  process.env.API_KEY_PRIVATE
+const config = require('./config.json');
+const api_key = config.secretKey;
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
     emailjs.init(api_key);

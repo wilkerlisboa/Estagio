@@ -1,7 +1,9 @@
 // require('dotenv').config();
 // const api_key  =  process.env.API_KEY_PRIVATE
 const config = require('./config.json');
-const api_key = config.secretKey;
+const api_key = config.API_KEY_PUBLIC;
+const service = config.SERVICE;
+const template = config.TEMPLATE;
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
     emailjs.init(api_key);
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // 'ID DE SERVIÇO' E 'EMPLATE ID' DO EMAILJS
-        emailjs.send('service_3xuqj69', 'template_tulesef', formData)
+        emailjs.send(service, template, formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
                 window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/sucesso.html';

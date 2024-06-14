@@ -1,6 +1,6 @@
 // require('dotenv').config();
 // const api_key  =  process.env.API_KEY_PRIVATE
-const config = require('./config.json');
+const config = require('../config.json');
 const api_key = config.API_KEY_PUBLIC;
 const service = config.SERVICE;
 const template = config.TEMPLATE;
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
         emailjs.send(service, template, formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
-                window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/sucesso.html';
+                window.location.href = 'https://estagio.tuxtu.com.br/page/sucesso.html';
             }, function(error) {
                 console.error('Erro ao enviar e-mail:', error);
-                window.location.href = 'https://wilkerlisboa.github.io/Estagio/page/erro.html';
+                window.location.href = 'https://estagio.tuxtu.com.br/page/erro.html';
             });
     });
 });

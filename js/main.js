@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
-    emailjs.init('1bZVq8TPEQuEYlSfU');
+    emailjs.init('');
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();

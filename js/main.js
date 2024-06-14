@@ -1,6 +1,8 @@
+require('dotenv').config();
+const api_key  =  process.env.API_KEY_PRIVATE
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
-    emailjs.init('');
+    emailjs.init(api_key);
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();

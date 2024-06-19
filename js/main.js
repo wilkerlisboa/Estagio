@@ -1,15 +1,10 @@
-// require('dotenv').config();
-// const api_key  =  process.env.API_KEY_PRIVATE
-const config = require('../config.json');
-const api_key = config.API_KEY_PUBLIC;
-const service = config.SERVICE;
-const template = config.TEMPLATE;
+
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
     emailjs.init(api_key);
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(gpfSHxRPb-NgFuJYP);
 
         // COLETANDO DADOS DO FORMULARIO
         var formData = {
@@ -60,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // 'ID DE SERVIÇO' E 'EMPLATE ID' DO EMAILJS
-        emailjs.send(service, template, formData)
+        emailjs.send(service_neekx8w, template_qwjcd2c, formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
                 window.location.href = 'https://estagio.tuxtu.com.br/page/sucesso.html';

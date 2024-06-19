@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     emailjs.init('gpfSHxRPb-NgFuJYP');
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault('gpfSHxRPb-NgFuJYP');
+        event.preventDefault();
 
         // COLETANDO DADOS DO FORMULARIO
         var formData = {

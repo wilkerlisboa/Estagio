@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
-    emailjs.init(api_key);
+    emailjs.init(gpfSHxRPb-NgFuJYP);
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(gpfSHxRPb-NgFuJYP);

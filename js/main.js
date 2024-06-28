@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // CHAVE PUBLICA DO EMAILJS
-    emailjs.init('gpfSHxRPb-NgFuJYP');
+    emailjs.init('1bZVq8TPEQuEYlSfU');
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var formData = {
             name: document.getElementById('nome').value,
             endereco: document.getElementById('endereco').value,
+            bairro: document.getElementById('bairro').value,
+            cep: document.getElementById('cep').value,
+            cidade: document.getElementById('cidade').value,
+            estado: document.getElementById('estado').value,
             email: document.getElementById('email').value,
             idade: document.getElementById('idade').value,
             contato: document.getElementById('contato').value,
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // 'ID DE SERVIÇO' E 'EMPLATE ID' DO EMAILJS
-        emailjs.send('service_neekx8w', 'template_qwjcd2c', formData)
+        emailjs.send('service_w1pnqoo', 'template_tulesef', formData)
             .then(function(response) {
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
                 window.location.href = 'https://estagio.tuxtu.com.br/page/sucesso.html';

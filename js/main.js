@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var formData = {
             name: document.getElementById('nome').value,
             endereco: document.getElementById('endereco').value,
+            numero: document.getElementById('numero').value,
             bairro: document.getElementById('bairro').value,
             cep: document.getElementById('cep').value,
             cidade: document.getElementById('cidade').value,

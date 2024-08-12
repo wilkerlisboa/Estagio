@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
             curso_graduacao: document.getElementById('curso_graduacao').value,
             semestre: document.getElementById('semestre').value,
             formatura: document.getElementById('formatura').value,
-            outra_graduacao: document.getElementById('outra_graduacao').value,
             outra_formacao: document.getElementById('outra_formacao').value,
             experiencia_profissional: document.getElementById('experiencia_profissional').value,
             curso_aperfeicoamento: document.getElementById('curso_aperfeicoamento').value,
